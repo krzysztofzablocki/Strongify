@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.description  = <<-DESC
     Simply 1-file µframework that gets rid of weak-strong dancing in Swift.
   DESC
-  s.homepage     = "https://github.com/krzysztofzablocki/Strongify"
+  s.homepage     = "https://github.com/krzysztofzablocki/Strongify.git"
   s.license      = { :type => "MIT", :file => "LICENSE" }
   s.author             = { "Krzysztof Zablocki" => "krzysztof.zablocki@pixle.pl" }
   s.social_media_url   = ""
