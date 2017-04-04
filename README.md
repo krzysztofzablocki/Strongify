@@ -14,7 +14,7 @@ target.closure = { [weak self, weak other] some, arguments in
 To this:
 
 ```swift
-target.closure = strongify(self, other) { strongSelf, strongOther, some, arguments in
+target.closure = strongify(weak: self, other) { strongSelf, strongOther, some, arguments in
     /// ... code
 }
 ```
