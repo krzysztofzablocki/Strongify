@@ -6,7 +6,7 @@ Basically allows you to go from this:
 
 ```swift
 target.closure = { [weak self, weak other] some, arguments in 
-    guard let strongSelf = self else { return }
+    guard let strongSelf = self, let strongOther = other else { return }
     /// ... code
 }
 ```
@@ -14,7 +14,7 @@ target.closure = { [weak self, weak other] some, arguments in
 To this:
 
 ```swift
-target.closure = strongify(self, other) { instance, other, some, arguments in
+target.closure = strongify(self, other) { strongSelf, strongOther, some, arguments in
     /// ... code
 }
 ```
