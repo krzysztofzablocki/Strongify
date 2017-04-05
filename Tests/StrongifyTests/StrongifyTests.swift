@@ -27,7 +27,7 @@ class StrongifyTests: XCTestCase {
         let target = Target()
 
         /// Act
-        target.closure = strongify(target) { instance, number, text in
+        target.closure = strongify(weak: target) { instance, number, text in
             received = (instance, number, text)
         }
         target.closure?(2, "61")
@@ -49,7 +49,7 @@ class StrongifyTests: XCTestCase {
         /// Act
         autoreleasepool {
             let target = Target()
-            target.closure = strongify(target) { instance, number, text in
+            target.closure = strongify(weak: target) { instance, number, text in
             }
             target.deinitClosure = {
                 targetDestroyed = true
