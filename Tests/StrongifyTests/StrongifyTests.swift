@@ -65,7 +65,7 @@ class StrongifyTests: XCTestCase {
     var received: NSObject?
 
     // Act
-    let closure: () -> Void = strongify(weak: object) { instance, _ in
+    let closure: () -> Void = strongify(weak: object) { instance in
       received = instance
     }
     closure()
