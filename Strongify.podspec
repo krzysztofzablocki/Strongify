@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Strongify"
-  s.version      = "1.1"
+  s.version      = "1.2"
   s.summary      = "1-file µframework that gets rid of weak-strong dancing in Swift."
   s.description  = <<-DESC
     Simply 1-file µframework that gets rid of weak-strong dancing in Swift.
