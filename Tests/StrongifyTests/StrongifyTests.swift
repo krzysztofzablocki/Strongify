@@ -58,6 +58,24 @@ class StrongifyTests: XCTestCase {
 
         XCTAssertTrue(targetDestroyed == true)
     }
+
+  func testZeroArguments() {
+    // Arrange
+    let object = NSObject()
+    var received: NSObject?
+
+    // Act
+    let closure: () -> Void = strongify(weak: object) { instance in
+      received = instance
+    }
+    closure()
+
+    guard let receivedObject = received else {
+      return XCTFail()
+    }
+
+    XCTAssert(receivedObject === object)
+  }
 }
 
 #if os(Linux)
